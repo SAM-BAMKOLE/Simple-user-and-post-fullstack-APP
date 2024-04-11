@@ -1,0 +1,151 @@
+<%- include('partials/header.ejs') %>
+  <%- include('partials/navbar.ejs') %>
+  <main>
+    <!-- hero -->
+    <div class="container">
+      <div class="py-5 px-2">
+        <h1 class="" style="font-size: 45px">Simple User and Post API</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tenetur, aliquam consectetur labore dolore perferendis perspiciatis ex aut ab corporis soluta?
+        </p>
+        <div class="mt-2">
+          <a href="auth/signin" class="btn btn-dark btn-lg">Signin</a>
+          <a href="auth/signup" class="btn btn-outline-dark btn-lg">Sign up</a>
+        </div>
+      </div>
+      <img src="https://source.unsplash.com/brown-turtle-swimming-underwater-L-2p8fapOA8" class="rounded img-fluid" />
+  </div>
+  <div class="container mt-5">
+    <h2>API Routes</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quisquam fuga, quo.
+    </p>
+    <!-- route -->
+    <div class="py-2 border-bottom">
+      <span class="btn btn-primary mb-3">Auth routes</span>
+      <div>
+        <article class="card text-bg-primary shadow mb-3" style="max-width: 18rem;">
+          <div class="card-header d-flex justify-content-between">
+            <kbd class="">POST</kbd><span class="">/auth/signup</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Signup</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+          </div>
+          <div class="card-footer text-end">
+            PUBLIC
+          </div>
+        </article>
+      </div>
+      <div>
+        <article class="card text-bg-primary shadow mb-3" style="max-width: 18rem;">
+          <div class="card-header d-flex justify-content-between">
+            <kbd>POST</kbd><span class="">/auth/signin</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Signin</h5>
+            <p class="card-text">
+              User can signin with password and either email or username
+            </p>
+          </div>
+          <div class="card-footer text-end">
+            PUBLIC
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="py-2 border-bottom">
+      <span class="btn btn-danger mb-3">User routes</span>
+      <div>
+        <article class="card text-bg-danger shadow mb-3" style="max-width: 18rem;">
+          <div class="card-header d-flex justify-content-between">
+            <kbd class="">GET</kbd><span class="">/user</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Get all users - Admin Route</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+          </div>
+          <div class="card-footer text-end">
+            PRIVATE
+          </div>
+        </article>
+      </div>
+      <div>
+        <article class="card text-bg-danger shadow mb-3" style="max-width: 18rem;">
+          <div class="card-header d-flex justify-content-between">
+            <kbd>DELETE</kbd><span class="">/user/:userId</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Delete user</h5>
+            <p class="card-text">
+              Only accessible by current logged in user or admin
+            </p>
+          </div>
+          <div class="card-footer text-end">
+            PRIVATE
+          </div>
+        </article>
+      </div>
+      <div>
+        <article class="card text-bg-danger shadow mb-3" style="max-width: 18rem;">
+          <div class="card-header d-flex justify-content-between">
+            <kbd>PATCH</kbd><span class="">/update-username</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Update Username</h5>
+            <p class="card-text">
+              
+              Requires the new username
+            </p>
+          </div>
+          <div class="card-footer text-end">
+            PRIVATE
+          </div>
+        </article>
+      </div>
+      <div>
+        <article class="card text-bg-danger shadow mb-3" style="max-width: 18rem;">
+          <div class="card-header d-flex justify-content-between">
+            <kbd>PATCH</kbd><span class="">/update-password</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Update Password</h5>
+            <p class="card-text">
+              
+              Requires the new password
+            </p>
+          </div>
+          <div class="card-footer text-end">
+            PRIVATE
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container pb-5">
+  <div class=" mb-3 alert alert-primary" role="alert" id="response">
+  This is a primary alert—check it out!
+  <!-- response -->
+
+
+  <% response && response.forEach(user => { %>
+    <div>
+      <p>Username: <%= user.username %></p>
+      <p>Email: <%= user.email %></p>
+    </div>
+  <% }); %>
+
+</div>
+<button class="btn btn-primary" hx-get='/users' hx-target='#response'>Get users</button>
+</div>
+
+</main>
+
+
+
+<%- include('partials/footer.ejs') %>

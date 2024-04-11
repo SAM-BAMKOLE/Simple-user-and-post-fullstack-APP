@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+  <div class="container w-100 vh-100 d-flex justify-content-center align-items-center">
+    
+<form class="" id='signin-form' action='/auth/signin' method='post'>
+  <!--<div class=" mb-3 alert alert-primary" role="alert" id="status">
+  This is a primary alert—check it out!
+</div>-->
+
+  <h1 class="mb-3">Signin</h1>
+  <!--<div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" aria-describedby="username" name="user">
+  </div>-->
+  <div class="mb-3">
+    <label for="user" class="form-label">Email address or Username</label>
+    <input type="text" class="form-control" id="user" aria-describedby="emailHelp" name="user">
+    <!--<div id="emailHelp" class="form-text">We'll never -->
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+  </div>
+  <!--
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+<%- include('../partials/footer.ejs') %>

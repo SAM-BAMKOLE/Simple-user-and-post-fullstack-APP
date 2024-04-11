@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+  <div class="mt-5">
+    <a href="/post/create" class="btn btn-primary">Create new post</a>
+  </div>
+<div class="py-5 row gx-2 gy-2">
+  <% response.forEach(post => { %>
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%- post.title %></h5>
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <p class="card-text"><%- post.content %></p>
+    <a href="/post/update" class="card-link">Update post</a>
+    <a href="/post/<%- post._id %>" class="card-link text-danger">Delete post</a>
+  </div>
+</div>
+  <% }) %>
+</div>
+</div>
+
+<%- include('../partials/footer.ejs') %>
